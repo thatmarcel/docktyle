@@ -11,5 +11,5 @@ You can also change the transparency of your dock
 
 ### Download
 You can download Docktyle from [repo.basepack.co](https://packed.to/docktyle) for free
-
-<img style="margin-top: 20px" alt="Banner" src="https://ucarecdn.com/d83c3267-5dc7-4de5-853f-a63850824d08/" data-canonical-src="https://ucarecdn.com/d83c3267-5dc7-4de5-853f-a63850824d08/" width="400" />
+<br /><br />
+<img alt="Banner" src="https://ucarecdn.com/d83c3267-5dc7-4de5-853f-a63850824d08/" data-canonical-src="https://ucarecdn.com/d83c3267-5dc7-4de5-853f-a63850824d08/" width="400" />
