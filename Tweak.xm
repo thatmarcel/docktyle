@@ -13,7 +13,7 @@
     +(UIColor *)colourWithString:(NSString *)stringToConvert withFallbackColour:(UIColor*) fallback;
     +(UIColor*) colourWithRGBString:(NSString*) stringToConvert;
     +(UIColor *) colourWithHexString:(NSString *)stringToConvert;
-    +(BOOL) colourIsLight :(UIColor*) colour;   
+    +(BOOL) colourIsLight :(UIColor*) colour;
     +(UIColor*)interpolateFrom:(UIColor*)startColour toColour:(UIColor*)endColour withPercentage:(float)percentage;
 @end
 
@@ -30,19 +30,19 @@
 @interface MTMaterialView : UIView
     -(void)setRecipe:(NSInteger)arg1;
 
-    @property (getter=_materialLayer,nonatomic,readonly) MTMaterialLayer * materialLayer; 
+    @property (getter=_materialLayer,nonatomic,readonly) MTMaterialLayer * materialLayer;
 @end
 
 @interface SBDockView : UIView
-    @property (nonatomic,retain) MTMaterialView * backgroundView; 
+    @property (nonatomic,retain) MTMaterialView * backgroundView;
 @end
 
 @interface SBFloatingDockPlatterView : UIView
 @end
 
 @interface SBFloatingDockView : UIView
-    @property (nonatomic,retain) MTMaterialView * backgroundView; 
-    @property (nonatomic,retain) SBFloatingDockPlatterView * mainPlatterView; 
+    @property (nonatomic,retain) MTMaterialView * backgroundView;
+    @property (nonatomic,retain) SBFloatingDockPlatterView * mainPlatterView;
 @end
 
 @interface SBIconListPageControl : UIView
@@ -55,21 +55,21 @@ BOOL layerAddedFloating  = NO;
 NSInteger layoutCount = 0;
 NSInteger layoutCountFloating = 0;
 
+HBPreferences *preferences = [[HBPreferences alloc] initWithIdentifier:@"com.thatmarcel.tweaks.docktyle.hbprefs"];
+[preferences registerDefaults:@{
+    @"style": @1,
+    @"iosblurenabled": @YES,
+    @"enabled": @YES,
+    @"styletype": @0,
+    @"alpha": @1.0,
+    @"hidepagedots": @NO
+}];
+
 // Hide page control
 %hook SBIconListPageControl
 
 - (void) layoutSubviews {
     %orig;
-
-    HBPreferences *preferences = [[HBPreferences alloc] initWithIdentifier:@"com.thatmarcel.tweaks.docktyle.hbprefs"];
-    [preferences registerDefaults:@{
-        @"style": @1,
-        @"iosblurenabled": @YES,
-        @"enabled": @YES,
-        @"styletype": @0,
-        @"alpha": @1.0,
-        @"hidepagedots": @NO
-	}];
 
     if ([preferences boolForKey:@"hidepagedots"] == YES) {
         [self setHidden:YES];
@@ -77,16 +77,6 @@ NSInteger layoutCountFloating = 0;
 }
 
 -(void) setHidden:(BOOL)arg1 {
-    HBPreferences *preferences = [[HBPreferences alloc] initWithIdentifier:@"com.thatmarcel.tweaks.docktyle.hbprefs"];
-    [preferences registerDefaults:@{
-        @"style": @1,
-        @"iosblurenabled": @YES,
-        @"enabled": @YES,
-        @"styletype": @0,
-        @"alpha": @1.0,
-        @"hidepagedots": @NO
-	}];
-
     if ([preferences boolForKey:@"hidepagedots"] == NO) {
         %orig(arg1);
         return;
@@ -100,14 +90,6 @@ NSInteger layoutCountFloating = 0;
 %hook MTMaterialView
 
 -(void)setAlpha:(double)arg1 {
-    HBPreferences *preferences = [[HBPreferences alloc] initWithIdentifier:@"com.thatmarcel.tweaks.docktyle.hbprefs"];
-    [preferences registerDefaults:@{
-        @"style": @1,
-        @"iosblurenabled": @YES,
-        @"enabled": @YES,
-        @"styletype": @0,
-        @"alpha": @1.0
-	}];
     if ([self.superview isKindOfClass:%c(SBDockView)] || [self.superview isKindOfClass:%c(SBFloatingDockView)]) {
         %orig([preferences doubleForKey:@"alpha"]);
     } else {
@@ -125,15 +107,6 @@ NSInteger layoutCountFloating = 0;
     if (self.backgroundView == NULL || self.backgroundView.layer == NULL) {
         return;
     }
-
-    HBPreferences *preferences = [[HBPreferences alloc] initWithIdentifier:@"com.thatmarcel.tweaks.docktyle.hbprefs"];
-    [preferences registerDefaults:@{
-        @"style": @1,
-        @"iosblurenabled": @YES,
-        @"enabled": @YES,
-        @"styletype": @0,
-        @"alpha": @1.0
-	}];
 
     if ([preferences boolForKey:@"enabled"] == NO) {
         return;
@@ -210,7 +183,7 @@ NSInteger layoutCountFloating = 0;
     }
 
     if ([preferences integerForKey:@"styletype"] ==  3) {
-        // [self.backgroundView setHidden:YES];
+        [self.backgroundView setHidden:YES];
     }
 }
 
@@ -220,15 +193,6 @@ NSInteger layoutCountFloating = 0;
 
 - (void) layoutSubviews {
     %orig;
-
-    HBPreferences *preferences = [[HBPreferences alloc] initWithIdentifier:@"com.thatmarcel.tweaks.docktyle.hbprefs"];
-    [preferences registerDefaults:@{
-        @"style": @1,
-        @"iosblurenabled": @YES,
-        @"enabled": @YES,
-        @"styletype": @0,
-        @"alpha": @1.0
-	}];
 
     if ([preferences boolForKey:@"enabled"] == NO) {
         return;
@@ -267,7 +231,7 @@ NSInteger layoutCountFloating = 0;
         [self.layer insertSublayer:gradient atIndex:0];
 
         [self.backgroundView setHidden:YES];
-    
+
         layerAdded = YES;
 
         return;
