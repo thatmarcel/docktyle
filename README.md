@@ -1,5 +1,5 @@
 # Docktyle
-## Dock customization jailbreak tweak for iOS
+**Dock customization jailbreak tweak for iOS**
 
 ### Features
 - Change your dock to a gradient or solid color
