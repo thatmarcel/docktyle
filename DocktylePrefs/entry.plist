@@ -1,0 +1,10 @@
+{
+    entry = {
+	    bundle = DocktylePrefs;
+	    cell = PSLinkCell;
+	    detail = DocktylePrefsController;
+	    isController = 1;
+	    label = Docktyle;
+		icon = icon.png;
+    };
+}

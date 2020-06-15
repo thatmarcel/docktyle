@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<!-- hb_respring: -->
+
+		<!-- Header -->
+		<dict>
+    		<key>cell</key>
+    		<string>PSGroupCell</string>
+    		<key>headerCellClass</key>
+    		<string>HBPackageNameHeaderCell</string>
+    		<key>packageIdentifier</key>
+    		<string>com.thatmarcel.tweaks.docktyle</string>
+			<key>backgroundGradientColors</key>
+			<array>
+				<string>#FF416C</string>
+				<string>#FF4B2B</string>
+			</array>
+			<key>showAuthor</key>
+			<false />
+			<key>footerText</key>
+			<string>This tweak was requested by u/cesarisaiah on r/TweakBounty and is inspired by DockShift</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Changes require a respring</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>label</key>
+			<string>Enable tweak</string>
+			<key>default</key>
+			<true />
+			<key>defaults</key>
+			<string>com.thatmarcel.tweaks.docktyle.hbprefs</string>
+			<key>key</key>
+			<string>enabled</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>label</key>
+			<string>Hide page dots</string>
+			<key>default</key>
+			<false />
+			<key>defaults</key>
+			<string>com.thatmarcel.tweaks.docktyle.hbprefs</string>
+			<key>key</key>
+			<string>hidepagedots</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Dock opacity</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>default</key>
+			<real>1</real>
+			<key>min</key>
+			<real>0</real>
+			<key>max</key>
+			<real>1</real>
+			<key>defaults</key>
+			<string>com.thatmarcel.tweaks.docktyle.hbprefs</string>
+			<key>key</key>
+			<string>alpha</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Style type</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSSegmentCell</string>
+			<key>default</key>
+			<integer>0</integer>
+			<key>defaults</key>
+			<string>com.thatmarcel.tweaks.docktyle.hbprefs</string>
+			<key>key</key>
+			<string>styletype</string>
+			<key>label</key>
+			<string>iOS Style</string>
+			<key>validTitles</key>
+			<array>
+				<string>iOS</string>
+				<string>Solid color</string>
+				<string>Gradient</string>
+				<string>Hidden</string>
+			</array>
+			<key>validValues</key>
+			<array>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>2</integer>
+				<integer>3</integer>
+			</array>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>iOS</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>label</key>
+			<string>Enable blur</string>
+			<key>default</key>
+			<true />
+			<key>defaults</key>
+			<string>com.thatmarcel.tweaks.docktyle.hbprefs</string>
+			<key>key</key>
+			<string>iosblurenabled</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>default</key>
+			<integer>1</integer>
+			<key>defaults</key>
+			<string>com.thatmarcel.tweaks.docktyle.hbprefs</string>
+			<key>key</key>
+			<string>style</string>
+			<key>label</key>
+			<string>iOS Style</string>
+			<key>validTitles</key>
+			<array>
+				<string>White: 70%</string>
+				<string>White: 90%</string>
+				<string>Dark: 50%</string>
+				<string>Dark: 70%</string>
+				<string>Dark: 90%</string>
+			</array>
+			<key>validValues</key>
+			<array>
+				<integer>1</integer>
+				<integer>9</integer>
+				<integer>6</integer>
+				<integer>4</integer>
+				<integer>7</integer>
+			</array>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Solid color</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>cellClass</key>
+			<string>SparkColourPickerCell</string>
+			<key>libsparkcolourpicker</key>
+			<dict>
+				<key>defaults</key>
+				<string>com.thatmarcel.tweaks.docktyle.scprefs</string>
+				<key>fallback</key>
+				<string>#f5bd07</string>
+				<key>alpha</key>
+				<false />
+			</dict>
+			<key>label</key>
+			<string>Color</string>
+			<key>key</key>
+			<string>solidcolor</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Gradient</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>cellClass</key>
+			<string>SparkColourPickerCell</string>
+			<key>libsparkcolourpicker</key>
+			<dict>
+				<key>defaults</key>
+				<string>com.thatmarcel.tweaks.docktyle.scprefs</string>
+				<key>fallback</key>
+				<string>#FF416C</string>
+				<key>alpha</key>
+				<false />
+			</dict>
+			<key>label</key>
+			<string>Gradient Color 1</string>
+			<key>key</key>
+			<string>gradientcolorone</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>cellClass</key>
+			<string>SparkColourPickerCell</string>
+			<key>libsparkcolourpicker</key>
+			<dict>
+				<key>defaults</key>
+				<string>com.thatmarcel.tweaks.docktyle.scprefs</string>
+				<key>fallback</key>
+				<string>#FF4B2B</string>
+				<key>alpha</key>
+				<false />
+			</dict>
+			<key>label</key>
+			<string>Gradient Color 2</string>
+			<key>key</key>
+			<string>gradientcolortwo</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Developer</string>
+		</dict>
+
+		<!-- Twitter Cell -->
+		<dict>
+    		<key>cellClass</key>
+    		<string>HBTwitterCell</string>
+    		<key>label</key>
+    		<string>Marcel Braun</string>
+    		<key>user</key>
+    		<string>thatmarcelbraun</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Designer</string>
+		</dict>
+
+		<!-- Twitter Cell -->
+		<dict>
+    		<key>cellClass</key>
+    		<string>HBTwitterCell</string>
+    		<key>label</key>
+    		<string>Kindred Cashew</string>
+    		<key>user</key>
+    		<string>devcashew</string>
+		</dict>
+	</array>
+	<key>title</key>
+	<string>Docktyle</string>
+</dict>
+</plist>
