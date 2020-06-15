@@ -55,15 +55,19 @@ BOOL layerAddedFloating  = NO;
 NSInteger layoutCount = 0;
 NSInteger layoutCountFloating = 0;
 
-HBPreferences *preferences = [[HBPreferences alloc] initWithIdentifier:@"com.thatmarcel.tweaks.docktyle.hbprefs"];
-[preferences registerDefaults:@{
-    @"style": @1,
-    @"iosblurenabled": @YES,
-    @"enabled": @YES,
-    @"styletype": @0,
-    @"alpha": @1.0,
-    @"hidepagedots": @NO
-}];
+HBPreferences *preferences;
+
+%ctor {
+    preferences = [[HBPreferences alloc] initWithIdentifier:@"com.thatmarcel.tweaks.docktyle.hbprefs"];
+    [preferences registerDefaults:@{
+        @"style": @1,
+        @"iosblurenabled": @YES,
+        @"enabled": @YES,
+        @"styletype": @0,
+        @"alpha": @1.0,
+        @"hidepagedots": @NO
+    }];
+}
 
 // Hide page control
 %hook SBIconListPageControl
