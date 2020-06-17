@@ -1,7 +1,7 @@
 Package: com.thatmarcel.tweaks.docktyle
 Name: Docktyle
 Depends: mobilesubstrate, com.spark.libsparkcolourpicker, preferenceloader, ws.hbang.common (>= 1.11)
-Version: 1.1
+Version: 1.1.1
 Architecture: iphoneos-arm
 Description: Unlock other dock styles
 Maintainer: Marcel Braun
